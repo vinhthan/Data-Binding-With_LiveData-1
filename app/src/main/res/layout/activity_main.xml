@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.databindingwithlivedatall1.MainViewModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/txvChangeEdt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:textSize="28sp"
+            android:text="@{viewmodel.changeValueEditText}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/edt"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="79dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="@={viewmodel.editTextContent}"
+            app:layout_constraintEnd_toEndOf="@+id/txvChangeEdt"
+            app:layout_constraintStart_toStartOf="@+id/txvChangeEdt"
+            app:layout_constraintTop_toBottomOf="@+id/txvChangeEdt" />
+
+        <TextView
+            android:id="@+id/txvShowEdt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:textSize="28sp"
+            app:layout_constraintEnd_toEndOf="@+id/btnShowEdt"
+            app:layout_constraintStart_toStartOf="@+id/btnShowEdt"
+            app:layout_constraintTop_toBottomOf="@+id/btnShowEdt" />
+
+        <Button
+            android:id="@+id/btnShowEdt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:text="Show edittext"
+            app:layout_constraintEnd_toEndOf="@+id/edt"
+            app:layout_constraintStart_toStartOf="@+id/edt"
+            app:layout_constraintTop_toBottomOf="@+id/edt" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
