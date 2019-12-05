@@ -16,6 +16,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //lắng nghe LiveData
+        //Hàm lắng nghe LiveData nên được viết ở UI Thread vì chỉ
+        // UI thread mới có thể update giao diện thôi các bạn nhé
         val mainViewModel = ViewModelProviders.of(this)
             .get(MainViewModel::class.java)
 

@@ -10,6 +10,8 @@ class MainViewModel : ViewModel() {
     @Bindable
     val editTextContent = MutableLiveData<String>()
 
+    //Update LiveData
+
     //hien thi gtri edt
     private val _showEdt = MutableLiveData<String>()
     val showEdt : LiveData<String>
@@ -20,3 +22,7 @@ class MainViewModel : ViewModel() {
     val changeValueEditText : LiveData<String>
         get() = _changeValueEditText
 }
+
+//LiveData con co them:
+//Transformations.map()
+//Transformations.switchMap()
